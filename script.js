@@ -12,11 +12,6 @@ class BookApp {
         document.getElementById('addChapter').addEventListener('click', () => this.addChapter());
         document.getElementById('downloadBook').addEventListener('click', () => this.downloadBook());
         document.getElementById('addCharacter').addEventListener('click', () => this.addCharacter());
-        document.getElementById('charactersMenu').addEventListener('click', (e) => {
-            if (e.target.classList.contains('character-insert')) {
-                this.insertCharacterIntoChapter(e.target.dataset.character);
-            }
-        });
     }
 
     loadFromLocalStorage() {
@@ -206,7 +201,6 @@ class BookApp {
         this.characters.push(character);
         this.saveToLocalStorage();
         this.renderCharacters();
-        this.updateCharactersDropdown();
     }
 
     updateCharacter(id, field, value) {
@@ -214,7 +208,6 @@ class BookApp {
         if (character) {
             character[field] = value;
             this.saveToLocalStorage();
-            this.updateCharactersDropdown();
         }
     }
 
@@ -222,7 +215,6 @@ class BookApp {
         this.characters = this.characters.filter(char => char.id !== id);
         this.saveToLocalStorage();
         this.renderCharacters();
-        this.updateCharactersDropdown();
     }
 
     showCharacterMetadata(characterId) {
@@ -287,6 +279,10 @@ class BookApp {
                             data-character="${character.id}">
                             View Info
                         </button>
+                        <button class="btn btn-sm btn-outline-success ms-2 character-insert-btn"
+                            data-character="${character.id}">
+                            Insert into Chapter
+                        </button>
                     </div>
                     <button class="btn btn-danger btn-sm" onclick="app.deleteCharacter(${character.id})">Delete</button>
                 </div>
@@ -318,29 +314,6 @@ class BookApp {
             // Add click event for the info button
             const infoBtn = characterElement.querySelector('.character-info-btn');
             infoBtn.addEventListener('click', () => {
-                this.showCharacterMetadata(character.id);
-            });
-        });
-    }
-
-    updateCharactersDropdown() {
-        const dropdownMenu = document.getElementById('charactersMenu');
-        dropdownMenu.innerHTML = '';
-
-        this.characters.forEach(character => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.className = 'dropdown-item character-info';
-            a.dataset.character = character.id;
-            a.innerHTML = `
-                <span class="character-name">${character.name}</span>
-                <small class="text-muted d-block">Click to view info</small>
-            `;
-            li.appendChild(a);
-            dropdownMenu.appendChild(li);
-
-            // Add click event for showing character info
-            a.addEventListener('click', () => {
                 this.showCharacterMetadata(character.id);
             });
         });
