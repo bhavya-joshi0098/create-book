@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Writing App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Book Writer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="chaptersDropdown" role="button" data-bs-toggle="dropdown">
+                            Chapters
+                        </a>
+                        <ul class="dropdown-menu" id="chaptersMenu">
+                            <!-- Chapters will be added here -->
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-success me-2" id="addChapter">Add Chapter</button>
+                    <button class="btn btn-primary" id="downloadBook">Download PDF</button>
+                    <button class="btn btn-info me-2" data-bs-toggle="modal" data-bs-target="#characterModal">Manage Characters</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="book-stats bg-light p-3 mb-4 rounded">
+            <h4>Book Statistics</h4>
+            <p class="mb-0">Total Word Count: <span id="totalWordCount">0</span> words</p>
+        </div>
+        <div id="chapters">
+            <!-- Chapters will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- HTML2PDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Add this modal at the bottom of the body, before the scripts -->
+    <div class="modal fade" id="characterModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Character Management</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <button class="btn btn-success btn-sm" id="addCharacter">Add New Character</button>
+                    </div>
+                    <div id="charactersList">
+                        <!-- Characters will be listed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

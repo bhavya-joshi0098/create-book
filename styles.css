@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.controls {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.chapter {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chapter-title-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.chapter-number {
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.chapter-name-input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    flex: 1;
+}
+
+.chapter-stats {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+textarea.chapter-content {
+    width: 100%;
+    min-height: 500px;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.book-stats {
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.delete-chapter {
+    background-color: #ff4444;
+}
+
+.delete-chapter:hover {
+    background-color: #cc0000;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.character-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f8f9fa;
+}
+
+.character-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.character-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.character-field {
+    margin-bottom: 10px;
+}
+
+.character-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.character-field input, 
+.character-field textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.character-insert-btn {
+    padding: 2px 8px;
+    font-size: 0.8em;
+}
+
+.dropdown-item.character-insert {
+    padding: 8px 15px;
+}
+
+.dropdown-item.character-insert:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item .character-name {
+    font-weight: bold;
+}
+
+.dropdown-item small {
+    font-size: 0.8em;
+}
+
+.chapter-content {
+    font-family: 'Arial', sans-serif;
+}
+
+.character-info-btn {
+    padding: 2px 8px;
+    font-size: 0.8em;
+}
+
+.character-info {
+    padding: 15px;
+}
+
+.info-section {
+    margin-bottom: 15px;
+}
+
+.info-section h6 {
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.info-section p {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+.modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+} 
